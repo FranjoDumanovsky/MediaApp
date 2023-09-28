@@ -19,11 +19,12 @@ function send_password_reset($get_name,$get_email,$token){
     $mail = new PHPMailer(true);
     
     try {
-    $mail->isSMTP();                                            //Send using SMTP
-    $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+    $mail->isSMTP();                                           //Send using SMTP
+    // $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+    $mail->Host       = 'mail.croatiaholidays.hr';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'dumanovskyfinance@gmail.com';                     //SMTP username
-    $mail->Password   = 'yykmxheirqsjfsbx';                               //SMTP password
+    $mail->Username   = 'admin@croatiaholidays.hr';                     //SMTP username
+    $mail->Password   = 'j59M25W1';                              //SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
     $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
@@ -40,7 +41,7 @@ function send_password_reset($get_name,$get_email,$token){
         <h2>Hello $get_name</h2>
         <h3>You are receiving this email because we received a password reset request for your account.</h3>
         <br/><br/>
-        <a href='https://croatiaholidays.hr/max_nema_pojma_php/password-change.php?token=$token&email=$get_email'>Click</a>
+        <a href='https://croatiaholidays.hr/php-test-app/password-change.php?token=$token&email=$get_email'>Click</a>
     ";
 
     $mail->Body = $email_template;

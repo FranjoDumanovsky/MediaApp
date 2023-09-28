@@ -41,7 +41,7 @@ function sendemail_verify($name, $email, $verify_token){
         <h2>You have been Registrated with my Account</h2>
         <h5>Verify your email</h5>
         <br/><br/>
-        <a href='https://croatiaholidays.hr/max_nema_pojma_php/verify-email.php?token=$verify_token'>Click</a>
+        <a href='https://croatiaholidays.hr/php-test-app/verify-email.php?token=$verify_token'>Click</a>
     ";
 
     $mail->Body = $email_template;
